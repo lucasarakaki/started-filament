@@ -19,3 +19,5 @@ yarn-error.log
 /.vscode
 composer.lock
 package-lock.json
+draft.yaml
+.blueprint

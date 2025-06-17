@@ -21,11 +21,24 @@ class PatientFactory extends Factory
      */
     public function definition(): array
     {
+        $patientTypes = [
+            'cat'     => 'Cat',
+            'dog'     => 'Dog',
+            'rabit'   => 'Rabbit',
+            'hamster' => 'Hamster',
+            'bird'    => 'Bird',
+            'fish'    => 'Fish',
+            'reptile' => 'Reptile',
+            'rodent'  => 'Rodent',
+            'ferret'  => 'Ferret',
+            'other'   => 'Other',
+        ];
+
         return [
             'date_of_birth' => fake()->date(),
             'name' => fake()->name(),
             'owner_id' => Owner::factory(),
-            'type' => fake()->randomElement(['dog', 'cat', 'bird', 'reptile', 'other']),
+            'type' => fake()->randomElement(array_keys($patientTypes)),
         ];
     }
 }
